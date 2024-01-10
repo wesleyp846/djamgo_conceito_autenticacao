@@ -33,7 +33,6 @@ Python 3.9 ou superior.
 
 > ### Funcionalidades
 &nbsp;
-&nbsp;
 
 1. Cadastro de novos usuários com nome e senha.
 2. Armazenamento dos dados em um banco de dados SQLite.
@@ -43,67 +42,95 @@ Python 3.9 ou superior.
 &nbsp;
 
 > ### Pré-configuração
-Ambiente Virtual
-Execute os seguintes comandos via terminal para criar e ativar um ambiente virtual:
 
-bash
-Copy code
-python -m venv env
-.\env\Scripts\activate
+Ambiente Virtual
+>> Execute os seguintes comandos via terminal para criar e ativar um ambiente virtual:
+&nbsp;
+   python -m venv env
+&nbsp;
+   .\env\Scripts\activate
+
+&nbsp;
+&nbsp;
+
 #### Instalação de Bibliotecas
-bash
-Copy code
-python -m pip install --upgrade pip
-pip install django
+&nbsp;
+
+   python -m pip install --upgrade pip
+&nbsp;
+   pip install django
+
+&nbsp;
 
 > ### Configuração do Projeto
+&nbsp;
+1. Criação do Projeto atenticacao
+   
+&nbsp;
 
-Criação do Projeto atenticacao
-bash
-Copy code
-django-admin startproject atenticacao .
+   django-admin startproject atenticacao .
 
-Configuração de settings.py
+2. Configuração de settings.py
+&nbsp;
 Em django_auth/settings.py, configure o projeto:
 
-python
-Copy code
+&nbsp;
 
-Aplicações instaladas
+Aplicações instaladas &nbsp;
+
 INSTALLED_APPS = [
     'usuarios'
 ]
 
-Adicione a rota do autnticador em urls.py:
+&nbsp;
 
-python
-Copy code
+3. Adicione a rota do autnticador em urls.py:
+&nbsp;
+
 Em urls.py
+&nbsp;
+
 path('accounts/', include('usuarios.urls')),
+
+&nbsp;
 Execute migrações e crie um superusuário:
+&nbsp;
 
-bash
-Copy code
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
-Inicie o servidor:
+   python manage.py makemigrations
+   python manage.py migrate
+&nbsp;
 
-bash
-Copy code
-python manage.py runserver
+   python manage.py createsuperuser
+
+4. Inicie o servidor:
+&nbsp;
+
+   python manage.py runserver
+&nbsp;
+
 Acesse http://127.0.0.1:8000/accounts/login/ para verificar a instalação bem-sucedida.
-
+&nbsp;
+&nbsp;
 
 > ###  Implementação
 O projeto utiliza o framework Django. O código inicial foi baseado no canal Paythonando, com documentação e melhorias adicionadas por Wesley Pereira.
+
+&nbsp;
+&nbsp;
 
 > ### Créditos
 Código inicial baseado no canal [Paythonando](https://www.youtube.com/watch?v=gdhiA6wObw0&list=PLCxYb_kl1FLaVvULMOXthDa9DP5-anT7A&index=2).
 Documentação e melhorias por [Wesley Pereira](https://github.com/wesleyp846).
 [Documentação de autenticação do Django](https://docs.djangoproject.com/en/5.0/topics/auth/default/#user-objects)
+
+&nbsp;
+&nbsp;
+
 > ### Licença
 MIT
+
+&nbsp;
+&nbsp;
 
 Esperamos que esta documentação ajude você a compreender a aplicação. Fique à vontade para contribuir e melhorar. Para mais informações, visite o LinkedIn de Wesley Pereira.
 
@@ -123,3 +150,4 @@ Crie uma pasta chamada templates na raiz do projeto.
 Copie os diretórios account e openid de env/lib/allauth/templates/ para templates.
 
 Personalize os arquivos HTML conforme necessário.
+               
