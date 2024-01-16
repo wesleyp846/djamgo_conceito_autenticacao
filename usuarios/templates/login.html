@@ -1,23 +1,33 @@
-<html>
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-    <title>Login</title>
-</head>
+{% block 'titulo' %} Cadastro {% endblock %}
+{% block 'conteudo' %}
+    <div class='d-flex align-items-center justify-content-center bg-dark bg-gradient p-5'>
+        <div class="border border-danger border-start-0 border-bottom-0 p-4 rounded-3">
+            <br>
+            <br>
+            <br>
 
-<body>
-    <form action= "{% url 'login' %}" method="POST">
-        {% csrf_token %}
+            <form action= "{% url 'login' %}" method="POST">
+                {% csrf_token %}
 
-        <input type="text" name="username" placeholder="Username"> 
-        <br>
-        <br>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="username" placeholder="Usuário">
+                </div>
+                <br>
+                <br>
+                <div class="mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="Senha">
+                </div>
+                <br>
+                <br>
+                <div class="d-flex justify-content-evenly">        
+                    <button type="submit" class="btn btn-primary">Logar</button>
+                    <a><button class="btn btn-primary">Cadastrar-se</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
 
-        <input type="password" name="password" placeholder="Password"> 
-        <br>
-        <br>
-    
-        <input type="submit" value="Logar">
-    </form>
-</body>
-
-</html>
+{% endblock %}

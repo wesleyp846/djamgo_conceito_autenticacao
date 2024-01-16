@@ -1,7 +1,3 @@
-<!-- vamos usar um template pronto do bootstrap5
-https://getbootstrap.com/docs/5.0/getting-started/introduction/
---> 
-
 <!doctype html>
 <html lang="pt-BR">
   <head>
@@ -14,13 +10,19 @@ https://getbootstrap.com/docs/5.0/getting-started/introduction/
     <title>Engeman Telecomunições | {% block 'titulo' %}  {% endblock %}
     </title>
   </head>
-  <body >
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand">Engeman</a>
-        <a class="btn btn-danger">Logoff</a>
-      </div>
-    </nav>
+  <body class="bg-dark">
+
+    {% block 'navbar' %}  
+    
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+            <a class="navbar-brand">Engeman</a>
+            <a class="btn btn-danger">Logoff</a>
+            </div>
+        </nav>
+     
+    {% endblock %}
+
     {% block 'conteudo' %}  {% endblock %}
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
