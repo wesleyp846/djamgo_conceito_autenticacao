@@ -18,7 +18,7 @@ def cadastro(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         #dentro da variável estão todos os usuarios com o username informado
-        user = User.objects.filter(username=username).first()
+        user = User.objects.get(username=username)
 
         # se o user existir, sinal de que ja tem algem cadastrado com este nome
         if user:
