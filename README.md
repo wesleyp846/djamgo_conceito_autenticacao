@@ -1,3 +1,5 @@
+# Projeto em pausa
+
 # Aplicação Django - Conceitos de Autenticação
 
 ## Introdução
